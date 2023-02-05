@@ -5,16 +5,16 @@ import styles from './Comment.module.css';
 
 
 interface CommentProps {
-    content: string;
+    contentcomment: string;
     onDeleteComment: (comment: string) => void;
 }
 
-export function Comment({content, onDeleteComment }: CommentProps){
+export function Comment({contentcomment, onDeleteComment }: CommentProps){
 
     const [likeCount, setLikeCount] = useState(0) // é importante iniciar o estado com algum valor do mesmo tipo que será utilizado.
 
     function handleDeleteComment(){
-        onDeleteComment(content)
+        onDeleteComment(contentcomment)
     }
 
     function handleLikeComment(){
@@ -46,7 +46,7 @@ export function Comment({content, onDeleteComment }: CommentProps){
                         </button>
                     </header>
 
-                    <p>{content}</p>
+                    <p>{contentcomment}</p>
 
                 </div>
             <footer>

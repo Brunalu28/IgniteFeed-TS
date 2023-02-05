@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Post } from "./components/Post";
+import { Post, PostProps } from "./components/Post";
 import { Sidebar } from "./components/Sidebar";
 
 import styles from './App.module.css';
@@ -9,7 +9,11 @@ import "./global.css";
 // publishedAt: Date
 // content: string
 
-const posts = [
+interface Posts extends PostProps{
+  id: number
+}
+
+const posts: Posts[] = [
   {
     id: 1,
     author: {
@@ -19,7 +23,7 @@ const posts = [
   },
   content: [
     { type: 'paragraph', content:'Fala galeraa 👋'},
-    { type: 'paragraph', content: "Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz no Ignite da Rocketseat. 🚀"},
+    { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz no Ignite da Rocketseat. 🚀'},
     { type: 'Link', content:'github.com/Brunalu28/IgniteFeed-Reactjs'}
   ],
   publishedAt: new Date('2023-01-27 22:13:00')
@@ -33,7 +37,7 @@ const posts = [
 },
 content: [
   { type: 'paragraph', content:'Fala galeraa 👋'},
-  { type: 'paragraph', content: "Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz no Ignite da Rocketseat. 🚀"},
+  { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz no Ignite da Rocketseat. 🚀'},
   { type: 'Link', content:'github.com/Brunalu28/IgniteFeed-Reactjs'}
 ],
 publishedAt: new Date('2023-01-25 22:13:00')

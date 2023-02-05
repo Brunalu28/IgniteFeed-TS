@@ -17,7 +17,7 @@ interface Content {
     type: 'paragraph' | 'Link';
     content: string;
 }
-interface PostProps {
+export interface PostProps {
     author: Author;
     publishedAt: Date;
     content: Content[];
@@ -133,7 +133,7 @@ export function Post({author, publishedAt, content}: PostProps){
                     return (
                         <Comment
                             key={comment}
-                            content={comment}
+                            contentcomment={comment}
                             onDeleteComment={deleteComment}
                         />
                     )
